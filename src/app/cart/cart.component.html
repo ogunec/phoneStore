@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6 mb-3" *ngFor="let phone of getCartList()">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/images/{{phone.Phone.Image}}" alt="{{phone.Phone.Model}}" class="img-fluid"
+                                >
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">{{phone.Phone.Brand}} {{phone.Phone.Model}}</h5>
+                                <p class="card-text">{{phone.Phone.Description}}</p>
+                                <p class="card-text fs-5"><strong>Stok: </strong>{{phone.Phone.Stock}}</p>
+                               
+                                  
+                                <div style="display: flex;">
+                                    <p class="card-text fs-5"><strong>Adet: </strong></p>
+                                   
+                                    <div class="ms-2">
+                                      <button class="btn btn-primary btn-sm" (click)="minusPhone(phone.Id)" type="button" id="button-addon1">-</button>
+                                      <input type="number" min="1" max="{{phone.Phone.Stock}}" #Quantity value="{{phone.Quantity}}" class="text-center bg-white text-primary" disabled placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                      <button class="btn btn-primary btn-sm" type="button" (click)="plusPhone(phone.Id)" id="button-addon1">+</button>
+                                    </div>
+                                  </div>
+                                  
+                                   
+                               
+                              
+                              
+                                <p class="card-text fs-5 mt-3"><strong>Toplam Fiyat: </strong>{{phone.TotalPrice}}</p>
+                                <button class="btn btn-danger" (click)="removeCart(phone.Id)">Ürünü Sepetten
+                                    Çıkar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <p class="fs-5"><strong>Müşteri</strong></p>
+        <select #user class="form-control">
+           
+            <option *ngFor="let item of getUserList()">{{item.FullName}}</option>
+        </select>
+        <div class="mt-3">
+            <p class="fs-5"><strong>Toplam Sepet Ücreti: </strong>{{totalPrice}}</p>
+            <button class="btn btn-success" (click)="confirmOrder(user.value)">Sepeti Onayla</button>
+            <button class="btn btn-danger ms-1" (click)="cancelOrder()">Sepeti İptal Et</button>
+            <button class="btn btn-warning ms-1" routerLink="/phones">Yeni Ürünler Ekle</button>
+        </div>
+    </div>
+</div>
