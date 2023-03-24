@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
+## Screenshots
+
+
+![phoneStore!](/src/assets/screenshots/1.png "index page")
+![phoneStore!](/src/assets/screenshots/2.png "index page")
+![phoneStore!](/src/assets/screenshots/3.png "index page")
+![phoneStore!](/src/assets/screenshots/4.png "index page")
+![phoneStore!](/src/assets/screenshots/5.png "index page")
+![phoneStore!](/src/assets/screenshots/6.png "index page")
+![phoneStore!](/src/assets/screenshots/7.png "index page")
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
